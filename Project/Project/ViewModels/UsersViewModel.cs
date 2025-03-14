@@ -33,6 +33,8 @@ namespace Project.ViewModels
         public ICommand SaveNewUserCommand { get; set; }
         public ICommand DeleteUserCommand { get; set; }
 
+        public ICommand CreateNewUserCommand { get; set; }
+
         public UsersViewModel()
         {
             Users = new ObservableCollection<User>();
@@ -40,6 +42,9 @@ namespace Project.ViewModels
             LoadUsersCommand = new RelayCommand(o => LoadUsers());
             SaveNewUserCommand = new RelayCommand(o => SaveNewUser(), o => CanSaveNewUser());
             DeleteUserCommand = new RelayCommand(o => DeleteUser(o));
+
+            // Command reset đối tượng NewUser, ví dụ khi nhấn "New User"
+            CreateNewUserCommand = new RelayCommand(o => NewUser = new User());
         }
 
         public void LoadUsers()

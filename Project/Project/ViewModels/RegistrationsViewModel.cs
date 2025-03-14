@@ -20,6 +20,8 @@ namespace Project.ViewModels
             set { _registrations = value; OnPropertyChanged(nameof(Registrations)); }
         }
 
+        public ICommand CreateNewRegistrationCommand { get; set; }
+
         // Đối tượng Registration mới được binding từ UI
         private Registration _newRegistration;
         public Registration NewRegistration
@@ -39,6 +41,9 @@ namespace Project.ViewModels
             LoadRegistrationsCommand = new RelayCommand(o => LoadRegistrations());
             SaveNewRegistrationCommand = new RelayCommand(o => SaveNewRegistration(), o => CanSaveNewRegistration());
             DeleteRegistrationCommand = new RelayCommand(o => DeleteRegistration(o));
+
+            // Command để tạo Registration mới (ví dụ: reset form)
+            CreateNewRegistrationCommand = new RelayCommand(o => NewRegistration = new Registration());
         }
 
         public void LoadRegistrations()

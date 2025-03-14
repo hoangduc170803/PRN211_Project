@@ -32,6 +32,8 @@ namespace Project.ViewModels
         public ICommand SaveNewCourseCommand { get; set; }
         public ICommand DeleteCourseCommand { get; set; }
 
+        public ICommand CreateNewCourseCommand { get; set; }
+
         public CoursesViewModel()
         {
             Courses = new ObservableCollection<Course>();
@@ -39,6 +41,9 @@ namespace Project.ViewModels
             LoadCoursesCommand = new RelayCommand(o => LoadCourses());
             SaveNewCourseCommand = new RelayCommand(o => SaveNewCourse(), o => CanSaveNewCourse());
             DeleteCourseCommand = new RelayCommand(o => DeleteCourse(o));
+
+            // Command reset đối tượng NewCourse, ví dụ khi nhấn "New Course"
+            CreateNewCourseCommand = new RelayCommand(o => NewCourse = new Course());
         }
 
         public void LoadCourses()
