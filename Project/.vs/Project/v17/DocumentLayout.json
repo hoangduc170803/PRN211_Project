@@ -3,12 +3,72 @@
   "WorkspaceRootPath": "D:\\Project_PRN212\\Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\viewmodels\\resultsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\viewmodels\\resultsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\viewmodels\\examsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\viewmodels\\examsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\viewmodels\\certificatesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\viewmodels\\certificatesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\viewmodels\\notificationsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\viewmodels\\notificationsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\models\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\models\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\viewmodels\\registrationsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\viewmodels\\registrationsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\viewmodels\\coursesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\viewmodels\\coursesviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\viewmodels\\usersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\viewmodels\\usersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\helpers\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\helpers\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\helpers\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\helpers\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\models\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\models\\safedrivecertdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\models\\safedrivecertdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\data\\safedrivecertdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|solutionrelative:project\\data\\safedrivecertdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B1D5B81B-AB1F-4AEB-A221-7A7578182D6F}|Project\\Project.csproj|d:\\project_prn212\\project\\project\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -26,16 +86,211 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ResultsViewModel.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\ResultsViewModel.cs",
+              "RelativeDocumentMoniker": "Project\\ViewModels\\ResultsViewModel.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\ResultsViewModel.cs",
+              "RelativeToolTip": "Project\\ViewModels\\ResultsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T08:28:51.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExamsViewModel.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\ExamsViewModel.cs",
+              "RelativeDocumentMoniker": "Project\\ViewModels\\ExamsViewModel.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\ExamsViewModel.cs",
+              "RelativeToolTip": "Project\\ViewModels\\ExamsViewModel.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAqwEMAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T08:27:22.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NotificationsViewModel.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\NotificationsViewModel.cs",
+              "RelativeDocumentMoniker": "Project\\ViewModels\\NotificationsViewModel.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\NotificationsViewModel.cs",
+              "RelativeToolTip": "Project\\ViewModels\\NotificationsViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAFEAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T08:22:10.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CertificatesViewModel.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\CertificatesViewModel.cs",
+              "RelativeDocumentMoniker": "Project\\ViewModels\\CertificatesViewModel.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\CertificatesViewModel.cs",
+              "RelativeToolTip": "Project\\ViewModels\\CertificatesViewModel.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAwwD4AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T08:19:49.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegistrationsViewModel.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\RegistrationsViewModel.cs",
+              "RelativeDocumentMoniker": "Project\\ViewModels\\RegistrationsViewModel.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\RegistrationsViewModel.cs",
+              "RelativeToolTip": "Project\\ViewModels\\RegistrationsViewModel.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwEsAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T08:15:41.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "Project\\Models\\Course.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\Models\\Course.cs",
+              "RelativeToolTip": "Project\\Models\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T08:14:16.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CoursesViewModel.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\CoursesViewModel.cs",
+              "RelativeDocumentMoniker": "Project\\ViewModels\\CoursesViewModel.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\CoursesViewModel.cs",
+              "RelativeToolTip": "Project\\ViewModels\\CoursesViewModel.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwFAAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T08:11:05.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "Project\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "Project\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwBAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:58:49.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UsersViewModel.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\UsersViewModel.cs",
+              "RelativeDocumentMoniker": "Project\\ViewModels\\UsersViewModel.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\ViewModels\\UsersViewModel.cs",
+              "RelativeToolTip": "Project\\ViewModels\\UsersViewModel.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAmwEIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:59:28.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Certificate.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\Models\\Certificate.cs",
+              "RelativeDocumentMoniker": "Project\\Models\\Certificate.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\Models\\Certificate.cs",
+              "RelativeToolTip": "Project\\Models\\Certificate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:54:53.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\Helpers\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "Project\\Helpers\\RelayCommand.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\Helpers\\RelayCommand.cs",
+              "RelativeToolTip": "Project\\Helpers\\RelayCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:58:08.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\Helpers\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "Project\\Helpers\\BaseViewModel.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\Helpers\\BaseViewModel.cs",
+              "RelativeToolTip": "Project\\Helpers\\BaseViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:57:26.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\Models\\Notification.cs",
+              "RelativeDocumentMoniker": "Project\\Models\\Notification.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\Models\\Notification.cs",
+              "RelativeToolTip": "Project\\Models\\Notification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:56:00.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Result.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\Models\\Result.cs",
+              "RelativeDocumentMoniker": "Project\\Models\\Result.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\Models\\Result.cs",
+              "RelativeToolTip": "Project\\Models\\Result.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:55:59.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Project\\Models\\User.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\Models\\User.cs",
+              "RelativeToolTip": "Project\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:55:58.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "SafeDriveCertDbContext.cs",
-              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\Models\\SafeDriveCertDbContext.cs",
-              "RelativeDocumentMoniker": "Project\\Models\\SafeDriveCertDbContext.cs",
-              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\Models\\SafeDriveCertDbContext.cs",
-              "RelativeToolTip": "Project\\Models\\SafeDriveCertDbContext.cs",
+              "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\Data\\SafeDriveCertDbContext.cs",
+              "RelativeDocumentMoniker": "Project\\Data\\SafeDriveCertDbContext.cs",
+              "ToolTip": "D:\\Project_PRN212\\Project\\Project\\Data\\SafeDriveCertDbContext.cs",
+              "RelativeToolTip": "Project\\Data\\SafeDriveCertDbContext.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAA5wCgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-04T16:29:58.222Z",
@@ -43,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 15,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\appsettings.json",
               "RelativeDocumentMoniker": "Project\\appsettings.json",
@@ -56,19 +311,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 17,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Project\\MainWindow.xaml",
               "ToolTip": "D:\\Project_PRN212\\Project\\Project\\MainWindow.xaml",
               "RelativeToolTip": "Project\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-04T16:19:21.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-04T16:19:21.3Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 18,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\Project_PRN212\\Project\\Project\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Project\\MainWindow.xaml.cs",
@@ -76,8 +330,7 @@
               "RelativeToolTip": "Project\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T16:19:18.279Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-04T16:19:18.279Z"
             }
           ]
         }

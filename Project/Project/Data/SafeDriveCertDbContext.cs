@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Project.Models;
 
-namespace Project.Models;
+namespace Project.Data;
 
 public partial class SafeDriveCertDbContext : DbContext
 {
