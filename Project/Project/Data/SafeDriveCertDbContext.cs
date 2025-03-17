@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Project.Models;
 
-namespace Project.Data;
+namespace Project.Models;
 
 public partial class SafeDriveCertDbContext : DbContext
 {
@@ -45,44 +44,38 @@ public partial class SafeDriveCertDbContext : DbContext
     {
         modelBuilder.Entity<Certificate>(entity =>
         {
-            entity.HasKey(e => e.CertificateId).HasName("PK__Certific__BBF8A7E1C464C75F");
+            entity.HasKey(e => e.CertificateId).HasName("PK__Certific__BBF8A7C1EAE83E02");
 
-            entity.HasIndex(e => e.CertificateCode, "UQ__Certific__9B85583009E9A440").IsUnique();
+            entity.HasIndex(e => e.CertificateCode, "UQ__Certific__9B8558304474748D").IsUnique();
 
-            entity.Property(e => e.CertificateId).HasColumnName("CertificateID");
             entity.Property(e => e.CertificateCode)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.UserId).HasColumnName("UserID");
 
             entity.HasOne(d => d.User).WithMany(p => p.Certificates)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Certificates_User");
+                .HasConstraintName("FK__Certifica__UserI__49C3F6B7");
         });
 
         modelBuilder.Entity<Course>(entity =>
         {
-            entity.HasKey(e => e.CourseId).HasName("PK__Courses__C92D71879447EEBA");
+            entity.HasKey(e => e.CourseId).HasName("PK__Courses__C92D71A78A6A110A");
 
-            entity.Property(e => e.CourseId).HasColumnName("CourseID");
             entity.Property(e => e.CourseName)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.TeacherId).HasColumnName("TeacherID");
 
             entity.HasOne(d => d.Teacher).WithMany(p => p.Courses)
                 .HasForeignKey(d => d.TeacherId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Courses_Teacher");
+                .HasConstraintName("FK__Courses__Teacher__3A81B327");
         });
 
         modelBuilder.Entity<Exam>(entity =>
         {
-            entity.HasKey(e => e.ExamId).HasName("PK__Exams__297521A7D370E100");
+            entity.HasKey(e => e.ExamId).HasName("PK__Exams__297521C719A6BC22");
 
-            entity.Property(e => e.ExamId).HasColumnName("ExamID");
-            entity.Property(e => e.CourseId).HasColumnName("CourseID");
             entity.Property(e => e.Room)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -90,76 +83,69 @@ public partial class SafeDriveCertDbContext : DbContext
             entity.HasOne(d => d.Course).WithMany(p => p.Exams)
                 .HasForeignKey(d => d.CourseId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Exams_Course");
+                .HasConstraintName("FK__Exams__CourseId__4222D4EF");
         });
 
         modelBuilder.Entity<Notification>(entity =>
         {
-            entity.HasKey(e => e.NotificationId).HasName("PK__Notifica__20CF2E32849A03DE");
+            entity.HasKey(e => e.NotificationId).HasName("PK__Notifica__20CF2E129778BF24");
 
-            entity.Property(e => e.NotificationId).HasColumnName("NotificationID");
             entity.Property(e => e.IsRead).HasDefaultValue(false);
+            entity.Property(e => e.Message).HasColumnType("text");
             entity.Property(e => e.SentDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.UserId).HasColumnName("UserID");
 
             entity.HasOne(d => d.User).WithMany(p => p.Notifications)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Notifications_User");
+                .HasConstraintName("FK__Notificat__UserI__4E88ABD4");
         });
 
         modelBuilder.Entity<Registration>(entity =>
         {
-            entity.HasKey(e => e.RegistrationId).HasName("PK__Registra__6EF58830FFBC5A2F");
+            entity.HasKey(e => e.RegistrationId).HasName("PK__Registra__6EF58810183F3700");
 
-            entity.Property(e => e.RegistrationId).HasColumnName("RegistrationID");
-            entity.Property(e => e.CourseId).HasColumnName("CourseID");
+            entity.Property(e => e.Comments).HasColumnType("text");
             entity.Property(e => e.Status)
-                .HasMaxLength(20)
+                .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasDefaultValue("Pending");
-            entity.Property(e => e.UserId).HasColumnName("UserID");
 
             entity.HasOne(d => d.Course).WithMany(p => p.Registrations)
                 .HasForeignKey(d => d.CourseId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Registrations_Course");
+                .HasConstraintName("FK__Registrat__Cours__3F466844");
 
             entity.HasOne(d => d.User).WithMany(p => p.Registrations)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Registrations_User");
+                .HasConstraintName("FK__Registrat__UserI__3E52440B");
         });
 
         modelBuilder.Entity<Result>(entity =>
         {
-            entity.HasKey(e => e.ResultId).HasName("PK__Results__9769022843E9E652");
+            entity.HasKey(e => e.ResultId).HasName("PK__Results__9769020828CC03BD");
 
-            entity.Property(e => e.ResultId).HasColumnName("ResultID");
-            entity.Property(e => e.ExamId).HasColumnName("ExamID");
             entity.Property(e => e.Score).HasColumnType("decimal(5, 2)");
-            entity.Property(e => e.UserId).HasColumnName("UserID");
 
             entity.HasOne(d => d.Exam).WithMany(p => p.Results)
                 .HasForeignKey(d => d.ExamId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Results_Exam");
+                .HasConstraintName("FK__Results__ExamId__44FF419A");
 
             entity.HasOne(d => d.User).WithMany(p => p.Results)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Results_User");
+                .HasConstraintName("FK__Results__UserId__45F365D3");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CCAC7AE78259");
+            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4C4A26D203");
 
-            entity.HasIndex(e => e.Email, "UQ__Users__A9D10534084AC06E").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Users__A9D10534A8E49ECF").IsUnique();
 
-            entity.Property(e => e.UserId).HasColumnName("UserID");
             entity.Property(e => e.Class)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -176,7 +162,7 @@ public partial class SafeDriveCertDbContext : DbContext
                 .HasMaxLength(15)
                 .IsUnicode(false);
             entity.Property(e => e.Role)
-                .HasMaxLength(20)
+                .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.School)
                 .HasMaxLength(100)

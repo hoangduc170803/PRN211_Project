@@ -1,4 +1,4 @@
-﻿using Project.Data;
+﻿
 using Project.Helpers;
 using Project.Models;
 using System;
@@ -65,7 +65,7 @@ namespace Project.ViewModels
         {
             return NewExam != null &&
                    NewExam.CourseId > 0 &&
-                   NewExam.ExamDate != DateOnly.FromDateTime(default(DateTime)) &&
+                   NewExam.Date != DateOnly.FromDateTime(default(DateTime)) &&
                    !string.IsNullOrWhiteSpace(NewExam.Room);
         }
 
