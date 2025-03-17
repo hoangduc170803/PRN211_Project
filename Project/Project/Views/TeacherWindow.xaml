@@ -1,0 +1,15 @@
+﻿<Window x:Class="Project.Views.TeacherWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Teacher Dashboard" Height="600" Width="900" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Chào mừng giảng viên!" 
+                       FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <!-- Chức năng quản lý khóa học, danh sách học sinh, kết quả học tập -->
+            <Button Content="Quản lý khóa học và học sinh" Width="200" Height="40" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <Button Content="Tạo đề thi mới" Width="200" Height="40" HorizontalAlignment="Center" Margin="0,0,0,10"
+                    Click="CreateExam_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

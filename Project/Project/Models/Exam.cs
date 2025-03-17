@@ -15,5 +15,7 @@ public partial class Exam
 
     public virtual Course Course { get; set; } = null!;
 
+    public virtual ICollection<Question> Questions { get; set; } = new List<Question>();
+
     public virtual ICollection<Result> Results { get; set; } = new List<Result>();
 }

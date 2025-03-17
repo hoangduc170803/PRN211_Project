@@ -25,13 +25,12 @@ namespace Project.Views
             InitializeComponent();
         }
 
-        // Phương thức xử lý sự kiện PasswordChanged
+        // Sự kiện này cập nhật Password vào LoginViewModel
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            // Ví dụ: cập nhật Password vào ViewModel
-            if (DataContext is LoginViewModel vm && sender is PasswordBox pwd)
+            if (DataContext is LoginViewModel vm && sender is PasswordBox pb)
             {
-                vm.Password = pwd.Password;
+                vm.Password = pb.Password;
             }
         }
     }
