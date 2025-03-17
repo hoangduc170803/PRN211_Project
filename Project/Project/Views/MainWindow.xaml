@@ -25,19 +25,27 @@
                         <GroupBox Header="Create New User" Margin="5" 
                                   Visibility="{Binding UsersVM.NewUser, Converter={StaticResource NullToVisibilityConverter}}">
                             <StackPanel>
-                                <TextBox Margin="5" 
-                                         Text="{Binding UsersVM.NewUser.FullName, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Full Name"/>
-                                <TextBox Margin="5" 
-                                         Text="{Binding UsersVM.NewUser.Email, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Email"/>
-                                <TextBox Margin="5" 
-                                         Text="{Binding UsersVM.NewUser.Password, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Password"/>
-                                <TextBox Margin="5" 
-                                         Text="{Binding UsersVM.NewUser.Phone, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Phone"/>
-                                <!-- Thêm các trường Role, Class, School nếu cần -->
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Full Name:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding UsersVM.NewUser.FullName, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Email:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding UsersVM.NewUser.Email, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Password:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding UsersVM.NewUser.Password, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Phone:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding UsersVM.NewUser.Phone, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <!-- Có thể thêm Role, Class, School nếu cần -->
                                 <Button Content="Save User" 
                                         Command="{Binding UsersVM.SaveNewUserCommand}" 
                                         Margin="5" Width="120"/>
@@ -59,19 +67,23 @@
                         <GroupBox Header="Create New Course" Margin="5" 
                                   Visibility="{Binding CoursesVM.NewCourse, Converter={StaticResource NullToVisibilityConverter}}">
                             <StackPanel>
-                                <TextBox Margin="5" 
-                                         Text="{Binding CoursesVM.NewCourse.CourseName, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Course Name"/>
-                                <TextBox Margin="5" 
-                                         Text="{Binding CoursesVM.NewCourse.TeacherId, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Teacher ID"/>
                                 <StackPanel Orientation="Horizontal" Margin="5">
-                                    <TextBlock Text="Start Date:" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                                    <DatePicker SelectedDate="{Binding CoursesVM.NewCourse.StartDate, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Content="Course Name:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding CoursesVM.NewCourse.CourseName, UpdateSourceTrigger=PropertyChanged}" />
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" Margin="5">
-                                    <TextBlock Text="End Date:" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                                    <DatePicker SelectedDate="{Binding CoursesVM.NewCourse.EndDate, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Content="Teacher ID:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding CoursesVM.NewCourse.TeacherId, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Start Date:" Width="100"/>
+                                    <DatePicker SelectedDate="{Binding CoursesVM.NewCourse.StartDate, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="End Date:" Width="100"/>
+                                    <DatePicker SelectedDate="{Binding CoursesVM.NewCourse.EndDate, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
                                 </StackPanel>
                                 <Button Content="Save Course" 
                                         Command="{Binding CoursesVM.SaveNewCourseCommand}" 
@@ -94,15 +106,21 @@
                         <GroupBox Header="Create New Registration" Margin="5"
                                   Visibility="{Binding RegistrationsVM.NewRegistration, Converter={StaticResource NullToVisibilityConverter}}">
                             <StackPanel>
-                                <TextBox Margin="5" 
-                                         Text="{Binding RegistrationsVM.NewRegistration.UserId, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="User ID"/>
-                                <TextBox Margin="5" 
-                                         Text="{Binding RegistrationsVM.NewRegistration.CourseId, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Course ID"/>
-                                <TextBox Margin="5" 
-                                         Text="{Binding RegistrationsVM.NewRegistration.Comments, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Comments"/>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="User ID:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding RegistrationsVM.NewRegistration.UserId, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Course ID:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding RegistrationsVM.NewRegistration.CourseId, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Comments:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding RegistrationsVM.NewRegistration.Comments, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
                                 <!-- Nếu cần, thêm ComboBox cho Status -->
                                 <Button Content="Save Registration" 
                                         Command="{Binding RegistrationsVM.SaveNewRegistrationCommand}" 
@@ -125,16 +143,20 @@
                         <GroupBox Header="Create New Exam" Margin="5" 
                                   Visibility="{Binding ExamsVM.NewExam, Converter={StaticResource NullToVisibilityConverter}}">
                             <StackPanel>
-                                <TextBox Margin="5" 
-                                         Text="{Binding ExamsVM.NewExam.CourseId, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Course ID"/>
                                 <StackPanel Orientation="Horizontal" Margin="5">
-                                    <TextBlock Text="Date:" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                                    <DatePicker SelectedDate="{Binding ExamsVM.NewExam.ExamDate, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Content="Course ID:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding ExamsVM.NewExam.CourseId, UpdateSourceTrigger=PropertyChanged}" />
                                 </StackPanel>
-                                <TextBox Margin="5" 
-                                         Text="{Binding ExamsVM.NewExam.Room, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Room"/>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Date:" Width="100"/>
+                                    <DatePicker SelectedDate="{Binding ExamsVM.NewExam.Date, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Room:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding ExamsVM.NewExam.Room, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
                                 <Button Content="Save Exam" 
                                         Command="{Binding ExamsVM.SaveNewExamCommand}" 
                                         Margin="5" Width="120"/>
@@ -156,18 +178,25 @@
                         <GroupBox Header="Create New Result" Margin="5" 
                                   Visibility="{Binding ResultsVM.NewResult, Converter={StaticResource NullToVisibilityConverter}}">
                             <StackPanel>
-                                <TextBox Margin="5" 
-                                         Text="{Binding ResultsVM.NewResult.ExamId, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Exam ID"/>
-                                <TextBox Margin="5" 
-                                         Text="{Binding ResultsVM.NewResult.UserId, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="User ID"/>
-                                <TextBox Margin="5" 
-                                         Text="{Binding ResultsVM.NewResult.Score, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Score"/>
-                                <CheckBox Margin="5" 
-                                          IsChecked="{Binding ResultsVM.NewResult.PassStatus, UpdateSourceTrigger=PropertyChanged}" 
-                                          Content="Pass Status"/>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Exam ID:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding ResultsVM.NewResult.ExamId, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="User ID:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding ResultsVM.NewResult.UserId, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Score:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding ResultsVM.NewResult.Score, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Pass Status:" Width="100"/>
+                                    <CheckBox IsChecked="{Binding ResultsVM.NewResult.PassStatus, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
                                 <Button Content="Save Result" 
                                         Command="{Binding ResultsVM.SaveNewResultCommand}" 
                                         Margin="5" Width="120"/>
@@ -189,18 +218,24 @@
                         <GroupBox Header="Create New Certificate" Margin="5" 
                                   Visibility="{Binding CertificatesVM.NewCertificate, Converter={StaticResource NullToVisibilityConverter}}">
                             <StackPanel>
-                                <TextBox Margin="5" 
-                                         Text="{Binding CertificatesVM.NewCertificate.UserId, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="User ID"/>
-                                <DatePicker Margin="5" 
-                                            SelectedDate="{Binding CertificatesVM.NewCertificate.IssuedDate, UpdateSourceTrigger=PropertyChanged}" 
-                                            ToolTip="Issued Date"/>
-                                <DatePicker Margin="5" 
-                                            SelectedDate="{Binding CertificatesVM.NewCertificate.ExpirationDate, UpdateSourceTrigger=PropertyChanged}" 
-                                            ToolTip="Expiration Date"/>
-                                <TextBox Margin="5" 
-                                         Text="{Binding CertificatesVM.NewCertificate.CertificateCode, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Certificate Code"/>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="User ID:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding CertificatesVM.NewCertificate.UserId, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Issued Date:" Width="100"/>
+                                    <DatePicker SelectedDate="{Binding CertificatesVM.NewCertificate.IssuedDate, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Expiration Date:" Width="100"/>
+                                    <DatePicker SelectedDate="{Binding CertificatesVM.NewCertificate.ExpirationDate, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Certificate Code:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding CertificatesVM.NewCertificate.CertificateCode, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
                                 <Button Content="Save Certificate" 
                                         Command="{Binding CertificatesVM.SaveNewCertificateCommand}" 
                                         Margin="5" Width="150"/>
@@ -222,12 +257,16 @@
                         <GroupBox Header="Create New Notification" Margin="5" 
                                   Visibility="{Binding NotificationsVM.NewNotification, Converter={StaticResource NullToVisibilityConverter}}">
                             <StackPanel>
-                                <TextBox Margin="5" 
-                                         Text="{Binding NotificationsVM.NewNotification.UserId, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="User ID"/>
-                                <TextBox Margin="5" 
-                                         Text="{Binding NotificationsVM.NewNotification.Message, UpdateSourceTrigger=PropertyChanged}" 
-                                         ToolTip="Message"/>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="User ID:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding NotificationsVM.NewNotification.UserId, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <Label Content="Message:" Width="100"/>
+                                    <TextBox Width="200"
+                                             Text="{Binding NotificationsVM.NewNotification.Message, UpdateSourceTrigger=PropertyChanged}" />
+                                </StackPanel>
                                 <Button Content="Save Notification" 
                                         Command="{Binding NotificationsVM.SaveNewNotificationCommand}" 
                                         Margin="5" Width="150"/>

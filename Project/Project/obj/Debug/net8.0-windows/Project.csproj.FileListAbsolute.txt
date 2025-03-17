@@ -132,3 +132,5 @@ D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\refint\Project.dll
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Project.pdb
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Project.genruntimeconfig.cache
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\ref\Project.dll
+D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\LoginWindow.g.cs
+D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\LoginWindow.baml
