@@ -86,14 +86,13 @@ namespace Project.ViewModels
                         ? context.Results.FirstOrDefault(r => r.UserId == Profile.UserId && r.ExamId == examId.Value)
                         : null;
 
-                    // Chỉ lấy chứng chỉ nếu trạng thái đăng ký là "approved" và có kỳ thi
+                    // Chỉ lấy chứng chỉ nếu trạng thái đăng ký là "approved" và kết quả thi đạt (PassStatus == true)
                     string certificateCode = null;
-                    if (reg.Status.ToLower() == "approved" && firstExam != null)
+                    if (reg.Status.ToLower() == "approved" && result != null && result.PassStatus)
                     {
-                        // Nếu bảng Certificates có liên kết với khóa học hoặc kỳ thi, bạn cần thêm điều kiện liên kết ở đây.
-                        // Ví dụ, nếu chứng chỉ được cấp theo CourseId:
-                        var certificate = context.Certificates
-                                                 .FirstOrDefault(c => c.UserId == Profile.UserId && c.ExamId == firstExam.ExamId);
+                        // Giả sử bảng Certificates có thuộc tính ExamId để liên kết với kỳ thi.
+                        var certificate = context.Certificates.FirstOrDefault(c => c.UserId == Profile.UserId);
+
                         certificateCode = certificate?.CertificateCode;
                     }
 
@@ -105,12 +104,13 @@ namespace Project.ViewModels
                         ExamDate = examDate,
                         Score = result?.Score,
                         PassStatus = result?.PassStatus,
-                        CertificateCode = certificateCode, // Chỉ có giá trị nếu đăng ký đã được phê duyệt
+                        CertificateCode = certificateCode,
                         RegistrationStatus = reg.Status
                     });
                 }
             }
         }
+
 
 
 
