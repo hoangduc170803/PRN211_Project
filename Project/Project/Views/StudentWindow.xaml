@@ -55,12 +55,22 @@
                 <Grid Margin="10">
                     <StackPanel>
                         <TextBlock Text="Tiến trình học tập:" 
-                                   FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
-                        <!-- DataGrid hiển thị tiến trình, kết quả thi, chứng chỉ -->
-                        <DataGrid x:Name="ProgressDataGrid" AutoGenerateColumns="True" Height="350"/>
+                       FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <DataGrid x:Name="ProgressDataGrid" ItemsSource="{Binding LearningProgress}" AutoGenerateColumns="False" Height="350">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Tên khóa học" Binding="{Binding CourseName}" Width="*"/>
+                                <DataGridTextColumn Header="Giảng viên" Binding="{Binding TeacherName}" Width="*"/>
+                                <DataGridTextColumn Header="Ngày thi" Binding="{Binding ExamDate}" Width="*"/>
+                                <DataGridTextColumn Header="Điểm thi" Binding="{Binding Score}" Width="*"/>
+                                <DataGridTextColumn Header="Trạng thái đạt" Binding="{Binding PassStatus}" Width="*"/>
+                                <DataGridTextColumn Header="Trạng thái đăng ký" Binding="{Binding RegistrationStatus}" Width="*"/>
+                                <DataGridTextColumn Header="Chứng chỉ" Binding="{Binding CertificateCode}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </StackPanel>
                 </Grid>
             </TabItem>
+
 
             <!-- Tab: Thông tin cá nhân -->
             <TabItem Header="Thông tin cá nhân">
