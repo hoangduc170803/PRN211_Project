@@ -17,6 +17,11 @@ namespace Project.ViewModels
 
         public ICommand UpdateProfileCommand { get; }
 
+        public int UserId
+        {
+            get { return _userId; }
+        }
+
         public StudentProfileViewModel(int userId)
         {
             _userId = userId;

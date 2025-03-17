@@ -9,16 +9,30 @@
                 <Grid Margin="10">
                     <StackPanel>
                         <TextBlock Text="Danh sách khóa học hiện có:" 
-                                   FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
-                        <!-- DataGrid hiển thị danh sách khóa học -->
-                        <DataGrid x:Name="CoursesDataGrid" AutoGenerateColumns="True" Height="300"/>
-                        <!-- Nút đăng ký -->
-                        <Button Content="Đăng ký khóa học" 
-                                Width="150" Margin="0,10,0,0" 
-                                HorizontalAlignment="Right"/>
+                       FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <DataGrid x:Name="CoursesDataGrid" ItemsSource="{Binding CoursesDisplay}" AutoGenerateColumns="False" Height="300">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Tên khóa học" Binding="{Binding CourseName}" Width="*"/>
+                                <DataGridTextColumn Header="Giảng viên" Binding="{Binding TeacherName}" Width="*"/>
+                                <DataGridTextColumn Header="Ngày bắt đầu" Binding="{Binding StartDate}" Width="*"/>
+                                <DataGridTextColumn Header="Ngày kết thúc" Binding="{Binding EndDate}" Width="*"/>
+                                <DataGridTextColumn Header="Thời gian kiểm tra" Binding="{Binding ExamTime}" Width="*"/>
+                                <DataGridTextColumn Header="Trạng thái đăng ký" Binding="{Binding RegistrationStatus}" Width="*"/>
+                                <DataGridTemplateColumn Header="Hành động" Width="150">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="Đăng ký" 
+                                        Command="{Binding DataContext.RegisterCourseCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                        CommandParameter="{Binding CourseId}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </StackPanel>
                 </Grid>
             </TabItem>
+
 
             <!-- Tab: Thi trực tuyến -->
             <TabItem Header="Thi trực tuyến">

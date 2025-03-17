@@ -14,5 +14,7 @@ namespace Project.Views
             // Gán DataContext cho toàn bộ cửa sổ với StudentWindowViewModel có thuộc tính Profile
             DataContext = new StudentWindowViewModel(userId);
         }
+
+
     }
 }

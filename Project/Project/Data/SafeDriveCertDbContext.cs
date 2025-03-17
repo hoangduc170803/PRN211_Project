@@ -65,7 +65,7 @@ namespace Project.Models
 
                 entity.Property(e => e.CourseName)
                     .HasMaxLength(100)
-                    .IsUnicode(false);
+                    .IsUnicode(true);
 
                 entity.HasOne(d => d.Teacher).WithMany(p => p.Courses)
                     .HasForeignKey(d => d.TeacherId)
@@ -194,7 +194,7 @@ namespace Project.Models
                     .IsUnicode(false);
                 entity.Property(e => e.FullName)
                     .HasMaxLength(100)
-                    .IsUnicode(false);
+                    .IsUnicode(true);
                 entity.Property(e => e.Password)
                     .HasMaxLength(255)
                     .IsUnicode(false);
@@ -206,7 +206,7 @@ namespace Project.Models
                     .IsUnicode(false);
                 entity.Property(e => e.School)
                     .HasMaxLength(100)
-                    .IsUnicode(false);
+                    .IsUnicode(true);
             });
 
             OnModelCreatingPartial(modelBuilder);
