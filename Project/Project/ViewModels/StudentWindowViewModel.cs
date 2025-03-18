@@ -113,9 +113,9 @@ namespace Project.ViewModels
                 var regs = context.Registrations
                                   .Where(r => r.UserId == Profile.UserId)
                                   .Include(r => r.Course)
-                                    .ThenInclude(c => c.Teacher)
+                                      .ThenInclude(c => c.Teacher)
                                   .Include(r => r.Course)
-                                    .ThenInclude(c => c.Exams)
+                                      .ThenInclude(c => c.Exams)
                                   .ToList();
 
                 LearningProgress.Clear();
@@ -132,11 +132,13 @@ namespace Project.ViewModels
                         : null;
 
                     string certificateCode = null;
+                    bool certificateApproved = false;
                     if (reg.Status.ToLower() == "approved" && result != null && result.PassStatus && firstExam != null)
                     {
                         var certificate = context.Certificates
                                                  .FirstOrDefault(c => c.UserId == Profile.UserId && c.ExamId == firstExam.ExamId);
                         certificateCode = certificate?.CertificateCode;
+                        certificateApproved = certificate != null && certificate.IsApproved;
                     }
 
                     LearningProgress.Add(new LearningProgressItemViewModel
@@ -148,11 +150,13 @@ namespace Project.ViewModels
                         Score = result?.Score,
                         PassStatus = result?.PassStatus,
                         CertificateCode = certificateCode,
+                        CertificateApproved = certificateApproved,
                         RegistrationStatus = reg.Status
                     });
                 }
             }
         }
+
 
         private void RegisterCourse(int courseId)
         {

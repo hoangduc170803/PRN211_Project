@@ -1,9 +1,4 @@
 ﻿using Project.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project.ViewModels
 {
@@ -14,5 +9,7 @@ namespace Project.ViewModels
         public decimal Score { get; set; }
         public bool PassStatus { get; set; }
         public string CertificateCode { get; set; }
+        // Thuộc tính mới: chứng chỉ đã được phê duyệt hay chưa
+        public bool CertificateApproved { get; set; }
     }
 }

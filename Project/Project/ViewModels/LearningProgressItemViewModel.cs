@@ -13,5 +13,8 @@ namespace Project.ViewModels
         public bool? PassStatus { get; set; } // true, false, hoặc null nếu chưa thi
         public string CertificateCode { get; set; } // Nếu đã nhận chứng chỉ
         public string RegistrationStatus { get; set; }
+
+        // Thuộc tính mới: chứng chỉ đã được phê duyệt hay chưa
+        public bool CertificateApproved { get; set; }
     }
 }

@@ -45,9 +45,7 @@ public partial class SafeDriveCertDbContext : DbContext
 
             entity.HasIndex(e => e.CertificateCode, "UQ__Certific__9B855830C003AC0F").IsUnique();
 
-            entity.Property(e => e.CertificateCode)
-                .HasMaxLength(50)
-                .IsUnicode(true);  // NVARCHAR
+            entity.Property(e => e.CertificateCode).HasMaxLength(50);
 
             entity.HasOne(d => d.Exam).WithMany(p => p.Certificates)
                 .HasForeignKey(d => d.ExamId)
@@ -63,9 +61,7 @@ public partial class SafeDriveCertDbContext : DbContext
         {
             entity.HasKey(e => e.CourseId).HasName("PK__Courses__C92D71A7EBAEAD8E");
 
-            entity.Property(e => e.CourseName)
-                .HasMaxLength(100)
-                .IsUnicode(true);  // NVARCHAR
+            entity.Property(e => e.CourseName).HasMaxLength(100).IsUnicode(true);
 
             entity.HasOne(d => d.Teacher).WithMany(p => p.Courses)
                 .HasForeignKey(d => d.TeacherId)
@@ -77,9 +73,7 @@ public partial class SafeDriveCertDbContext : DbContext
         {
             entity.HasKey(e => e.ExamId).HasName("PK__Exams__297521C739BC45A1");
 
-            entity.Property(e => e.Room)
-                .HasMaxLength(50)
-                .IsUnicode(true);  // NVARCHAR
+            entity.Property(e => e.Room).HasMaxLength(50).IsUnicode(true);
 
             entity.HasOne(d => d.Course).WithMany(p => p.Exams)
                 .HasForeignKey(d => d.CourseId)
@@ -98,11 +92,6 @@ public partial class SafeDriveCertDbContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.UserId).HasColumnName("UserID");
 
-            // Nếu Message đang dùng kiểu text, bạn có thể chuyển sang nvarchar(max)
-            entity.Property(e => e.Message)
-                .HasColumnType("nvarchar(max)")
-                .IsUnicode(true);
-
             entity.HasOne(d => d.User).WithMany(p => p.Notifications)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -113,10 +102,7 @@ public partial class SafeDriveCertDbContext : DbContext
         {
             entity.HasKey(e => e.OptionId).HasName("PK__Options__92C7A1FF2CF95A3D");
 
-            entity.Property(e => e.OptionText)
-                .HasMaxLength(500)
-                .IsUnicode(true);  // NVARCHAR
-
+            entity.Property(e => e.OptionText).HasMaxLength(500).IsUnicode(true);
             entity.HasOne(d => d.Question).WithMany(p => p.Options)
                 .HasForeignKey(d => d.QuestionId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -127,9 +113,7 @@ public partial class SafeDriveCertDbContext : DbContext
         {
             entity.HasKey(e => e.QuestionId).HasName("PK__Question__0DC06FAC9B2A22D8");
 
-            entity.Property(e => e.ImagePath)
-                .HasMaxLength(250)
-                .IsUnicode(true);  // NVARCHAR
+            entity.Property(e => e.ImagePath).HasMaxLength(250);
 
             entity.HasOne(d => d.Exam).WithMany(p => p.Questions)
                 .HasForeignKey(d => d.ExamId)
@@ -143,7 +127,7 @@ public partial class SafeDriveCertDbContext : DbContext
 
             entity.Property(e => e.Status)
                 .HasMaxLength(50)
-                .IsUnicode(true)  // NVARCHAR
+                .IsUnicode(true)
                 .HasDefaultValue("Pending");
 
             entity.HasOne(d => d.Course).WithMany(p => p.Registrations)
@@ -161,8 +145,7 @@ public partial class SafeDriveCertDbContext : DbContext
         {
             entity.HasKey(e => e.ResultId).HasName("PK__Results__97690208E77856AD");
 
-            entity.Property(e => e.Score)
-                .HasColumnType("decimal(5, 2)");
+            entity.Property(e => e.Score).HasColumnType("decimal(5, 2)");
 
             entity.HasOne(d => d.Exam).WithMany(p => p.Results)
                 .HasForeignKey(d => d.ExamId)
@@ -181,32 +164,17 @@ public partial class SafeDriveCertDbContext : DbContext
 
             entity.HasIndex(e => e.Email, "UQ__Users__A9D10534329D5B8A").IsUnique();
 
-            entity.Property(e => e.Class)
-                .HasMaxLength(50)
-                .IsUnicode(true);
-            entity.Property(e => e.Email)
-                .HasMaxLength(100)
-                .IsUnicode(true);
-            entity.Property(e => e.FullName)
-                .HasMaxLength(100)
-                .IsUnicode(true);
-            entity.Property(e => e.Password)
-                .HasMaxLength(255)
-                .IsUnicode(true);
-            entity.Property(e => e.Phone)
-                .HasMaxLength(15)
-                .IsUnicode(true);
-            entity.Property(e => e.Role)
-                .HasMaxLength(50)
-                .IsUnicode(true);
-            entity.Property(e => e.School)
-                .HasMaxLength(100)
-                .IsUnicode(true);
+            entity.Property(e => e.Class).HasMaxLength(50).IsUnicode(true);
+            entity.Property(e => e.Email).HasMaxLength(100);
+            entity.Property(e => e.FullName).HasMaxLength(100).IsUnicode(true);
+            entity.Property(e => e.Password).HasMaxLength(255);
+            entity.Property(e => e.Phone).HasMaxLength(15);
+            entity.Property(e => e.Role).HasMaxLength(50).IsUnicode(true);
+            entity.Property(e => e.School).HasMaxLength(100).IsUnicode(true);
         });
 
         OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-
 }

@@ -17,6 +17,8 @@ public partial class Certificate
 
     public int? ExamId { get; set; }
 
+    public bool IsApproved { get; set; }
+
     public virtual Exam? Exam { get; set; }
 
     public virtual User User { get; set; } = null!;
