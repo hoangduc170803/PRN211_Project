@@ -1,30 +1,49 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using Microsoft.EntityFrameworkCore;
 using Project.Helpers;
 using Project.Models;
+using Project.Views;
 
 namespace Project.ViewModels
 {
     public class StudentWindowViewModel : BaseViewModel
     {
+
+        private Exam _selectedExam;
+        public Exam SelectedExam
+        {
+            get => _selectedExam;
+            set { _selectedExam = value; OnPropertyChanged(nameof(SelectedExam)); }
+        }
+
         public StudentProfileViewModel Profile { get; set; }
         public ObservableCollection<CourseDisplayViewModel> CoursesDisplay { get; set; }
         public ObservableCollection<LearningProgressItemViewModel> LearningProgress { get; set; }
+        // Thêm collection cho kỳ thi
+        public ObservableCollection<Exam> Exams { get; set; }
+
         public ICommand LoadCoursesDisplayCommand { get; }
         public ICommand RegisterCourseCommand { get; }
+        public ICommand StartExamCommand { get; }
 
         public StudentWindowViewModel(int userId)
         {
             Profile = new StudentProfileViewModel(userId);
             CoursesDisplay = new ObservableCollection<CourseDisplayViewModel>();
             LearningProgress = new ObservableCollection<LearningProgressItemViewModel>();
+            Exams = new ObservableCollection<Exam>();
 
             LoadCoursesDisplayCommand = new RelayCommand(o => LoadCoursesDisplay());
             RegisterCourseCommand = new RelayCommand(o => RegisterCourse((int)o));
+            StartExamCommand = new RelayCommand(o => StartExam());
 
+            // Load dữ liệu ban đầu
             LoadCoursesDisplay();
+            LoadExams();
             LoadLearningProgress();
         }
 
@@ -32,16 +51,17 @@ namespace Project.ViewModels
         {
             using (var context = new SafeDriveCertDbContext())
             {
-                // Load các khóa học với thông tin giảng viên và kỳ thi
-                var courses = context.Courses.Include(c => c.Teacher)
-                                             .Include(c => c.Exams)
-                                             .ToList();
+                // Load khóa học với thông tin giảng viên và kỳ thi
+                var courses = context.Courses
+                                     .Include(c => c.Teacher)
+                                     .Include(c => c.Exams)
+                                     .ToList();
                 var regs = context.Registrations.Where(r => r.UserId == Profile.UserId).ToList();
 
                 CoursesDisplay.Clear();
                 foreach (var course in courses)
                 {
-                    var examTime = course.Exams.FirstOrDefault()?.Date.ToDateTime(new TimeOnly(0, 0)) ?? default;
+                    var examTime = course.Exams.FirstOrDefault()?.Date.ToDateTime(new TimeOnly(0, 0)) ?? default(DateTime);
                     var reg = regs.FirstOrDefault(r => r.CourseId == course.CourseId);
                     string regStatus = reg != null ? reg.Status : "Chưa đăng ký";
 
@@ -59,11 +79,37 @@ namespace Project.ViewModels
             }
         }
 
+        private void LoadExams()
+        {
+            using (var context = new SafeDriveCertDbContext())
+            {
+                // Lấy danh sách tất cả các kỳ thi có đăng ký "approved" cho học sinh hiện tại
+                // Giả sử bảng Registrations có cột CourseId liên kết với khóa học của kỳ thi.
+                var approvedExamIds = context.Registrations
+                                               .Where(r => r.UserId == Profile.UserId && r.Status.ToLower() == "approved")
+                                               .SelectMany(r => r.Course.Exams.Select(e => e.ExamId))
+                                               .Distinct()
+                                               .ToList();
+
+                var exams = context.Exams
+                                   .Where(e => approvedExamIds.Contains(e.ExamId))
+                                   .Include(e => e.Course)
+                                   .ThenInclude(c => c.Teacher)
+                                   .ToList();
+
+                Exams.Clear();
+                foreach (var exam in exams)
+                {
+                    Exams.Add(exam);
+                }
+            }
+        }
+
+
         private void LoadLearningProgress()
         {
             using (var context = new SafeDriveCertDbContext())
             {
-                // Lấy các đăng ký của học sinh cùng Course, Teacher, Exams
                 var regs = context.Registrations
                                   .Where(r => r.UserId == Profile.UserId)
                                   .Include(r => r.Course)
@@ -80,19 +126,16 @@ namespace Project.ViewModels
                         ? firstExam.Date.ToDateTime(new TimeOnly(0, 0))
                         : default(DateTime);
 
-                    // Lấy kết quả thi của học sinh nếu có
                     int? examId = firstExam != null ? firstExam.ExamId : (int?)null;
                     var result = examId.HasValue
                         ? context.Results.FirstOrDefault(r => r.UserId == Profile.UserId && r.ExamId == examId.Value)
                         : null;
 
-                    // Chỉ lấy chứng chỉ nếu trạng thái đăng ký là "approved" và kết quả thi đạt (PassStatus == true)
                     string certificateCode = null;
-                    if (reg.Status.ToLower() == "approved" && result != null && result.PassStatus)
+                    if (reg.Status.ToLower() == "approved" && result != null && result.PassStatus && firstExam != null)
                     {
-                        // Giả sử bảng Certificates có thuộc tính ExamId để liên kết với kỳ thi.
-                        var certificate = context.Certificates.FirstOrDefault(c => c.UserId == Profile.UserId);
-
+                        var certificate = context.Certificates
+                                                 .FirstOrDefault(c => c.UserId == Profile.UserId && c.ExamId == firstExam.ExamId);
                         certificateCode = certificate?.CertificateCode;
                     }
 
@@ -111,10 +154,6 @@ namespace Project.ViewModels
             }
         }
 
-
-
-
-
         private void RegisterCourse(int courseId)
         {
             using (var context = new SafeDriveCertDbContext())
@@ -130,5 +169,37 @@ namespace Project.ViewModels
             LoadCoursesDisplay();
             LoadLearningProgress();
         }
+
+        private void StartExam()
+        {
+            if (SelectedExam == null)
+            {
+                MessageBox.Show("Hãy chọn kỳ thi để bắt đầu.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            using (var context = new SafeDriveCertDbContext())
+            {
+                bool isRegistered = context.Registrations.Any(r => r.UserId == Profile.UserId && r.CourseId == SelectedExam.CourseId);
+                if (!isRegistered)
+                {
+                    MessageBox.Show("Bạn chưa đăng ký khóa học này. Vui lòng đăng ký trước khi thi.",
+                                    "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
+                bool alreadyHasResult = context.Results.Any(r => r.UserId == Profile.UserId && r.ExamId == SelectedExam.ExamId);
+                if (alreadyHasResult)
+                {
+                    MessageBox.Show("Bạn đã thi bài thi này rồi!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+            }
+
+            new OnlineExamWindow(SelectedExam.ExamId, Profile.UserId).Show();
+        }
+
+
+
     }
 }

@@ -39,16 +39,26 @@
                 <Grid Margin="10">
                     <StackPanel>
                         <TextBlock Text="Danh sách kỳ thi:" 
-                                   FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
-                        <!-- DataGrid hiển thị danh sách kỳ thi -->
-                        <DataGrid x:Name="ExamsDataGrid" AutoGenerateColumns="True" Height="300"/>
-                        <!-- Nút bắt đầu thi -->
+                       FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <!-- DataGrid hiển thị danh sách kỳ thi, binding SelectedItem -->
+                        <DataGrid x:Name="ExamsDataGrid" ItemsSource="{Binding Exams}" 
+          SelectedItem="{Binding SelectedExam}" 
+          AutoGenerateColumns="False" Height="300">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Khóa học" Binding="{Binding Course.CourseName}" Width="*"/>
+                                <DataGridTextColumn Header="Ngày thi" Binding="{Binding Date}" Width="*"/>
+                                <DataGridTextColumn Header="Phòng thi" Binding="{Binding Room}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <!-- Nút bắt đầu thi với command -->
                         <Button Content="Bắt đầu thi" 
-                                Width="150" Margin="0,10,0,0" 
-                                HorizontalAlignment="Right"/>
+                    Command="{Binding StartExamCommand}"
+                    Width="150" Margin="0,10,0,0" HorizontalAlignment="Right"/>
                     </StackPanel>
                 </Grid>
             </TabItem>
+
+
 
             <!-- Tab: Theo dõi tiến trình học tập -->
             <TabItem Header="Tiến trình học tập">

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\Project_PRN212\Project\Project\App.xaml
-6-15821613
+7368685254
 
-36-196466303
+40-444782704
 233364234806
-Views\AdminWindow.xaml;Views\CreateExamWindow.xaml;Views\LoginWindow.xaml;Views\StudentWindow.xaml;Views\TeacherWindow.xaml;Views\TrafficPoliceWindow.xaml;
+Views\AdminWindow.xaml;Views\CreateExamWindow.xaml;Views\LoginWindow.xaml;Views\OnlineExamWindow.xaml;Views\StudentWindow.xaml;Views\TeacherWindow.xaml;Views\TrafficPoliceWindow.xaml;
 
 False
 
