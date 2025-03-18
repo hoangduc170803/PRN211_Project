@@ -8,8 +8,9 @@ namespace Project.Views
         public CreateExamWindow(int teacherId)
         {
             InitializeComponent();
-            DataContext = new CreateExamViewModel(teacherId);
+            var viewModel = new CreateExamViewModel(teacherId);
+            viewModel.ExamSaved += () => this.Close();
+            DataContext = viewModel;
         }
     }
-
 }

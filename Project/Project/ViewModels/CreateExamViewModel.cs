@@ -10,6 +10,8 @@ namespace Project.ViewModels
 {
     public class CreateExamViewModel : BaseViewModel
     {
+        public event Action ExamSaved;
+
         // Giá trị TeacherId được truyền từ cửa sổ giảng viên
         public int TeacherId { get; set; }
 
@@ -184,6 +186,7 @@ namespace Project.ViewModels
                 }
 
                 MessageBox.Show("Đề thi đã được lưu thành công.", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                ExamSaved?.Invoke();
             }
             catch (Exception ex)
             {
