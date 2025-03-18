@@ -83,16 +83,16 @@ namespace Project.ViewModels
         {
             using (var context = new SafeDriveCertDbContext())
             {
-                // Lấy danh sách tất cả các kỳ thi có đăng ký "approved" cho học sinh hiện tại
-                // Giả sử bảng Registrations có cột CourseId liên kết với khóa học của kỳ thi.
+                // Lấy danh sách các kỳ thi của các khóa học mà sinh viên đã đăng ký (approved)
                 var approvedExamIds = context.Registrations
                                                .Where(r => r.UserId == Profile.UserId && r.Status.ToLower() == "approved")
                                                .SelectMany(r => r.Course.Exams.Select(e => e.ExamId))
                                                .Distinct()
                                                .ToList();
 
+                // Chỉ load những kỳ thi có examId nằm trong approvedExamIds và đã được confirmed (IsConfirmed == true)
                 var exams = context.Exams
-                                   .Where(e => approvedExamIds.Contains(e.ExamId))
+                                   .Where(e => approvedExamIds.Contains(e.ExamId) && e.IsConfirmed)
                                    .Include(e => e.Course)
                                    .ThenInclude(c => c.Teacher)
                                    .ToList();
@@ -104,6 +104,7 @@ namespace Project.ViewModels
                 }
             }
         }
+
 
 
         private void LoadLearningProgress()

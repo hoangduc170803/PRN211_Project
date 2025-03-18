@@ -38,9 +38,11 @@ namespace Project.Views
 
         private void CreateExam_Click(object sender, RoutedEventArgs e)
         {
-            // Mở cửa sổ tạo đề thi cho giảng viên
-            CreateExamWindow examWindow = new CreateExamWindow();
+            // Truyền teacherId vào CreateExamWindow
+            CreateExamWindow examWindow = new CreateExamWindow(_teacherId);
+            
             examWindow.Show();
         }
+
     }
 }

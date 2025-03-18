@@ -1,14 +1,27 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using Project.Helpers;   // Chứa BaseViewModel, RelayCommand
-using Project.Models;    // Chứa model Exam, Question, Option
+using Project.Helpers;
+using Project.Models;
 
 namespace Project.ViewModels
 {
     public class CreateExamViewModel : BaseViewModel
     {
+        // Giá trị TeacherId được truyền từ cửa sổ giảng viên
+        public int TeacherId { get; set; }
+
+        // Danh sách khóa học của giảng viên
+        public ObservableCollection<Course> Courses { get; set; }
+        private Course _selectedCourse;
+        public Course SelectedCourse
+        {
+            get => _selectedCourse;
+            set { _selectedCourse = value; OnPropertyChanged(nameof(SelectedCourse)); }
+        }
+
         // Thông tin kỳ thi
         private DateTime _examDate;
         public DateTime ExamDate
@@ -33,11 +46,14 @@ namespace Project.ViewModels
         public ICommand SelectImageCommand { get; }
         public ICommand SaveExamCommand { get; }
 
-        public CreateExamViewModel()
+        public CreateExamViewModel(int teacherId)
         {
-            // Khởi tạo thông tin kỳ thi
+            TeacherId = teacherId;
             ExamDate = DateTime.Now;
             Room = string.Empty;
+
+            Courses = new ObservableCollection<Course>();
+            LoadCourses();
 
             // Tạo danh sách câu hỏi và pre-populate 30 câu hỏi rỗng
             Questions = new ObservableCollection<Question>();
@@ -51,14 +67,33 @@ namespace Project.ViewModels
                 });
             }
 
-            // Khởi tạo các lệnh
             AddQuestionCommand = new RelayCommand(o => AddQuestion());
             AddOptionCommand = new RelayCommand(o => AddOption(o));
             SelectImageCommand = new RelayCommand(o => SelectImage(o));
             SaveExamCommand = new RelayCommand(o => SaveExam());
         }
 
-        // Cho phép giảng viên thêm câu hỏi (nếu số lượng hiện tại < 30)
+        private void LoadCourses()
+        {
+            try
+            {
+                using (var context = new SafeDriveCertDbContext())
+                {
+                    // Load danh sách khóa học của giảng viên dựa trên TeacherId
+                    var courses = context.Courses.Where(c => c.TeacherId == TeacherId).ToList();
+                    Courses.Clear();
+                    foreach (var course in courses)
+                    {
+                        Courses.Add(course);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi load khóa học: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
         private void AddQuestion()
         {
             if (Questions.Count < 30)
@@ -76,7 +111,6 @@ namespace Project.ViewModels
             }
         }
 
-        // Thêm một đáp án cho câu hỏi được truyền qua CommandParameter
         private void AddOption(object parameter)
         {
             if (parameter is Question question)
@@ -89,7 +123,6 @@ namespace Project.ViewModels
             }
         }
 
-        // Cho phép giảng viên chọn ảnh cho câu hỏi thông qua OpenFileDialog
         private void SelectImage(object parameter)
         {
             if (parameter is Question question)
@@ -99,19 +132,22 @@ namespace Project.ViewModels
                 if (dialog.ShowDialog() == true)
                 {
                     question.ImagePath = dialog.FileName;
-                    // Cập nhật lại danh sách để giao diện refresh (nếu cần)
                     OnPropertyChanged(nameof(Questions));
                 }
             }
         }
 
-        // Lưu đề thi vào cơ sở dữ liệu (Exam, sau đó Questions và Options)
         private void SaveExam()
         {
-            // Kiểm tra thông tin bắt buộc
             if (string.IsNullOrWhiteSpace(Room))
             {
                 MessageBox.Show("Vui lòng nhập phòng thi.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (SelectedCourse == null)
+            {
+                MessageBox.Show("Vui lòng chọn khóa học.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -128,17 +164,17 @@ namespace Project.ViewModels
             {
                 using (var context = new SafeDriveCertDbContext())
                 {
-                    // Tạo đối tượng Exam mới
+                    // Tạo đối tượng Exam mới với IsConfirmed = false
                     Exam exam = new Exam
                     {
                         Date = DateOnly.FromDateTime(ExamDate),
                         Room = Room,
-                        // Nếu có CourseId hay các thông tin khác, bạn có thể thêm vào đây.
+                        CourseId = SelectedCourse.CourseId,
+                        IsConfirmed = false // Kỳ thi mới chưa được xác nhận bởi cảnh sát giao thông
                     };
                     context.Exams.Add(exam);
                     context.SaveChanges();
 
-                    // Gán ExamId cho từng câu hỏi và lưu vào DB
                     foreach (var question in Questions)
                     {
                         question.ExamId = exam.ExamId;
