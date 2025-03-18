@@ -54,7 +54,7 @@ namespace Project.ViewModels
                             new StudentWindow(user.UserId).Show();
                             break;
                         case "teacher":
-                            new TeacherWindow().Show();
+                            new TeacherWindow(user.UserId).Show();
                             break;
                         case "trafficpolice":
                             new TrafficPoliceWindow().Show();

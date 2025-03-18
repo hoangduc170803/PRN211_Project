@@ -116,6 +116,7 @@ D:\Project_PRN212\Project\Project\bin\Debug\net8.0-windows\runtimes\win\lib\net6
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Project.csproj.AssemblyReference.cache
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\AdminWindow.baml
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\StudentWindow.baml
+D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\TeacherAddCourseWindow.baml
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\TeacherWindow.baml
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\TrafficPoliceWindow.baml
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\AdminWindow.g.cs
@@ -123,6 +124,9 @@ D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\CreateExamWindo
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\LoginWindow.g.cs
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\OnlineExamWindow.g.cs
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\StudentWindow.g.cs
+D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\TeacherAddCourseWindow.g.cs
+D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\TeacherEditCourseWindow.g.cs
+D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\TeacherManagementWindow.g.cs
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\TeacherWindow.g.cs
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\TrafficPoliceWindow.g.cs
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\App.g.cs
@@ -132,6 +136,8 @@ D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Project_MarkupCompile
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\CreateExamWindow.baml
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\LoginWindow.baml
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\OnlineExamWindow.baml
+D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\TeacherEditCourseWindow.baml
+D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Views\TeacherManagementWindow.baml
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Project.g.resources
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Project.GeneratedMSBuildEditorConfig.editorconfig
 D:\Project_PRN212\Project\Project\obj\Debug\net8.0-windows\Project.AssemblyInfoInputs.cache

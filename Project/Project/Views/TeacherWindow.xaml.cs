@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,20 @@ namespace Project.Views
     /// </summary>
     public partial class TeacherWindow : Window
     {
-        public TeacherWindow()
+        private int _teacherId;
+
+        public TeacherWindow(int teacherId)
         {
             InitializeComponent();
+            _teacherId = teacherId;
+            DataContext = new TeacherWindowViewModel(teacherId);
+        }
+
+        private void ManageCoursesAndStudents_Click(object sender, RoutedEventArgs e)
+        {
+            // Mở cửa sổ quản lý khóa học và học sinh
+            TeacherManagementWindow window = new TeacherManagementWindow(_teacherId);
+            window.Show();
         }
 
         private void CreateExam_Click(object sender, RoutedEventArgs e)

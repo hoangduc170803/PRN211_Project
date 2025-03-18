@@ -1,0 +1,28 @@
+﻿<Window x:Class="Project.Views.TeacherAddCourseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Thêm Khóa Học" Height="400" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="Thêm Khóa Học Mới" 
+                       FontSize="20" FontWeight="Bold" 
+                       Margin="0,0,0,20" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <Label Content="Tên khóa học:" Width="120"/>
+                <TextBox x:Name="txtCourseName" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <Label Content="Ngày bắt đầu:" Width="120"/>
+                <DatePicker x:Name="dpStartDate" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <Label Content="Ngày kết thúc:" Width="120"/>
+                <DatePicker x:Name="dpEndDate" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+                <Button Content="Lưu" Width="100" Margin="10,0" Click="btnSave_Click"/>
+                <Button Content="Hủy" Width="100" Margin="10,0" Click="btnCancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
